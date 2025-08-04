@@ -1,0 +1,11 @@
+@use './variables' as *;
+
+.nightshade-needle {
+  display: flex;
+  padding: 2rem;
+  text-align: left;
+
+  &_container {
+    flex-grow: 1;
+  }
+}
