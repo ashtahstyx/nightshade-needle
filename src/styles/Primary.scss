@@ -3,12 +3,25 @@
 @use './Header' as *;
 @use './Grid' as *;
 
+:root {
+  font-family: $font-family-base;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: $moon-petal;
+  background-color: $vein-black;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body,
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: $font-family-base;
 
   :focus-visible,
   :focus {
@@ -18,10 +31,45 @@ body,
   }
 }
 
+body {
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
 h1,
 h2,
 h3,
 h4 {
   margin-block-start: 0;
   margin-block-end: 0;
+}
+
+a {
+  font-weight: 500;
+  color: $belladonna;
+  text-decoration: none;
+
+  &:hover {
+    color: $belladonna;
+  }
+}
+
+button {
+  border-radius: $radius-md;
+  border: 1px solid transparent;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: $witchleaf;
+  color: $moon-petal;
+  cursor: pointer;
+
+  &:focus,
+  &:focus-visible {
+    outline: 4px auto $belladonna;
+  }
 }
