@@ -1,17 +1,27 @@
-import React from 'react';
+import type { Dispatch, SetStateAction } from 'react';
 import '../styles/Nightshade.scss';
+
+type Brand = 'DMC' | 'Anchor' | 'Sullivans' | 'JPCoats' | 'MaxiMouline';
+
+interface FlossColor {
+  code: string;
+  name: string;
+  hex: string;
+}
 
 interface SidebarProps {
   AIDA_COLORS: { name: string; hex: string }[];
   aidaColor: string;
   handleAidaChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
-  FLOSS_BRANDS: unknown;
-  brand: string;
-  setBrand: (b: string) => void;
+  FLOSS_BRANDS: Record<Brand, FlossColor[]>;
+  brand: Brand;
+  setBrand: Dispatch<SetStateAction<Brand>>;
+  setHoveredColor: Dispatch<
+    SetStateAction<{ x: number; y: number; info: string } | null>
+  >;
   selectedColor: string;
   setSelectedColor: (color: string) => void;
   hoveredColor: { x: number; y: number; info: string } | null;
-  setHoveredColor: (val: unknown) => void;
   removeMode: boolean;
   setRemoveMode: (val: boolean) => void;
 }
@@ -44,8 +54,8 @@ const Sidebar = ({
       </select>
 
       <h2>Select Brand</h2>
-      <select value={brand} onChange={(e) => setBrand(e.target.value)}>
-        {Object.keys(FLOSS_BRANDS).map((b) => (
+      <select value={brand} onChange={(e) => setBrand(e.target.value as Brand)}>
+        {(Object.keys(FLOSS_BRANDS) as Brand[]).map((b) => (
           <option key={b} value={b}>
             {b}
           </option>
@@ -59,7 +69,7 @@ const Sidebar = ({
       </button>
 
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
-        {FLOSS_BRANDS[brand].map((color: any) => (
+        {FLOSS_BRANDS[brand].map((color) => (
           <div
             key={color.code}
             onMouseEnter={(e) => {
