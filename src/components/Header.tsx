@@ -10,7 +10,7 @@ function Header() {
         /> */}
       <h1>Nightshade Needle</h1>
 
-      <div className=""></div>
+      <div className="nightshade_navigation"></div>
     </header>
   );
 }

@@ -22,8 +22,16 @@ const Cross = () => {
     y: number;
     info: string;
   } | null>(null);
-
   const [removeMode, setRemoveMode] = useState(false);
+
+  // Zoom state and handlers
+  const [zoom, setZoom] = useState(1);
+  const zoomIn = () => setZoom((z) => Math.min(z + 0.1, 3));
+  const zoomOut = () => setZoom((z) => Math.max(z - 0.1, 0.5));
+  const resetZoom = () => setZoom(1);
+
+  // Drawing state
+  const [isDrawing, setIsDrawing] = useState(false);
 
   const handleCellClick = (row: number, col: number, remove: boolean) => {
     const newGrid = grid.map((r) => [...r]);
@@ -43,6 +51,10 @@ const Cross = () => {
     const newColor = e.target.value;
     setAidaColor(newColor);
     setGrid(Array.from({ length: rows }, () => Array(cols).fill(newColor)));
+  };
+
+  const handleClearGrid = () => {
+    setGrid(Array.from({ length: rows }, () => Array(cols).fill(aidaColor)));
   };
 
   return (
@@ -71,6 +83,11 @@ const Cross = () => {
             setRows={setRows}
             setCols={setCols}
             handleGridSizeChange={handleGridSizeChange}
+            zoom={zoom}
+            zoomIn={zoomIn}
+            zoomOut={zoomOut}
+            resetZoom={resetZoom}
+            handleClearGrid={handleClearGrid}
           />
 
           <Grid
@@ -78,6 +95,9 @@ const Cross = () => {
             onCellClick={handleCellClick}
             aidaColor={aidaColor}
             removeMode={removeMode}
+            zoom={zoom}
+            isDrawing={isDrawing}
+            setIsDrawing={setIsDrawing}
           />
         </div>
       </div>

@@ -2,6 +2,7 @@
 @use './Nightshade' as *;
 @use './Header' as *;
 @use './Grid' as *;
+@use './Controls' as *;
 
 :root {
   font-family: $font-family-base;
@@ -61,7 +62,7 @@ a {
 button {
   border-radius: $radius-md;
   border: 1px solid transparent;
-  padding: 0.6rem 1.2rem;
+  padding: 0.5rem 1rem;
   font-size: 1rem;
   font-weight: 500;
   background-color: $witchleaf;

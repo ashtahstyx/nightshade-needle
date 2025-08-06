@@ -34,10 +34,6 @@ const Sidebar = ({
     <div
       className="sidebar"
       style={{ marginRight: '2rem', minWidth: '200px', position: 'relative' }}>
-      <button onClick={() => setRemoveMode(!removeMode)}>
-        {removeMode ? 'Switch to Draw Mode' : 'Switch to Remove Mode'}
-      </button>
-
       <h2>Select Aida Color</h2>
       <select value={aidaColor} onChange={handleAidaChange}>
         {AIDA_COLORS.map((color) => (
@@ -57,6 +53,11 @@ const Sidebar = ({
       </select>
 
       <h3>Colors</h3>
+
+      <button onClick={() => setRemoveMode(!removeMode)}>
+        {removeMode ? 'Switch to Draw Mode' : 'Switch to Remove Mode'}
+      </button>
+
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
         {FLOSS_BRANDS[brand].map((color: any) => (
           <div

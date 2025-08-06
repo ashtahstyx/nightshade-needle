@@ -1,9 +1,8 @@
 @use './variables' as *;
 
 .gridContainer {
-  width: 100%;
   max-width: 100%;
-  height: 80vh; /* Adjust as needed */
+  height: 80vh;
   overflow: scroll;
   border: 1px solid #ccc;
   padding: 1rem;
@@ -25,20 +24,4 @@
     box-shadow: inset 0 -0.5px 0 var(--border-color, #ccc),
       inset -0.5px 0 0 var(--border-color, #ccc);
   }
-}
-
-.zoom-controls {
-  position: sticky;
-  top: 0;
-  background: #fff;
-  display: flex;
-  gap: 0.5rem;
-  padding-bottom: 0.5rem;
-  z-index: 10;
-}
-
-.zoom-controls button {
-  padding: 0.3rem 0.6rem;
-  font-size: 1rem;
-  cursor: pointer;
 }
