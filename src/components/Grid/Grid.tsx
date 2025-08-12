@@ -1,7 +1,7 @@
 // src/components/Grid.tsx
 import React from 'react';
-import { getContrastColor } from '../helper/contrast-helper';
-import '../styles/Nightshade.scss';
+import { getContrastColor } from '../../helper/contrast-helper';
+import './Grid.scss';
 
 interface GridProps {
   grid: string[][];
@@ -39,6 +39,7 @@ const Grid = ({
 
   return (
     <div
+      id="crossStitchGrid"
       className="gridContainer"
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}>
@@ -47,7 +48,7 @@ const Grid = ({
         style={{
           backgroundColor: aidaColor,
           transform: `scale(${zoom})`,
-          transformOrigin: 'top center',
+          transformOrigin: 'top left',
         }}>
         {grid.map((row, rowIndex) => (
           <div className="gridContainer_row" key={rowIndex}>

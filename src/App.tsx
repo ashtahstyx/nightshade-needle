@@ -1,5 +1,5 @@
 import './styles/Primary.scss';
-import Nightshade from './components/Nightshade';
+import Nightshade from './components/Nightshade/Nightshade';
 
 const App = () => <Nightshade />;
 

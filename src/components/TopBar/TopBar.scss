@@ -1,0 +1,7 @@
+@use '../../styles/variables' as *;
+
+.nightshade_topbar {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}

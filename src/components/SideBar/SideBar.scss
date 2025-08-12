@@ -1,0 +1,44 @@
+@use '../../styles/variables' as *;
+
+.nightshade-needle {
+  &_sidebar {
+    min-width: 200px;
+    height: 80vh;
+    overflow: scroll;
+    padding: 1rem;
+  }
+}
+
+.color-palette {
+  &_box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  &_title {
+    width: 100%;
+  }
+
+  &_block {
+    width: 50px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .colorIcon {
+      font-size: 1rem;
+    }
+  }
+}
+
+.erase-button {
+  padding: 0.25rem;
+  width: 100%;
+  margin: 1rem 0;
+  svg {
+    margin-right: 0.5rem;
+  }
+}

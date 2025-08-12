@@ -1,8 +1,4 @@
 @use './variables' as *;
-@use './Nightshade' as *;
-@use './Header' as *;
-@use './Grid' as *;
-@use './Controls' as *;
 
 :root {
   font-family: $font-family-base;
@@ -10,7 +6,7 @@
   font-weight: 400;
 
   color: $moon-petal;
-  background-color: $vein-black;
+  background-color: $leaf-black;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -62,15 +58,12 @@ a {
 button {
   border-radius: $radius-md;
   border: 1px solid transparent;
-  padding: 0.5rem 1rem;
   font-size: 1rem;
   font-weight: 500;
-  background-color: $witchleaf;
-  color: $moon-petal;
   cursor: pointer;
 
   &:focus,
   &:focus-visible {
-    outline: 4px auto $belladonna;
+    outline: 2px solid $belladonna;
   }
 }

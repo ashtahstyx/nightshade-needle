@@ -1,5 +1,5 @@
 import type { Dispatch, SetStateAction } from 'react';
-import '../styles/Nightshade.scss';
+import '../SideBar/SideBar.scss';
 
 type Brand = 'DMC' | 'Anchor' | 'Sullivans' | 'JPCoats' | 'MaxiMouline';
 
@@ -9,10 +9,7 @@ interface FlossColor {
   hex: string;
 }
 
-interface SidebarProps {
-  AIDA_COLORS: { name: string; hex: string }[];
-  aidaColor: string;
-  handleAidaChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+interface FlossPickerProps {
   FLOSS_BRANDS: Record<Brand, FlossColor[]>;
   brand: Brand;
   setBrand: Dispatch<SetStateAction<Brand>>;
@@ -22,14 +19,9 @@ interface SidebarProps {
   selectedColor: string;
   setSelectedColor: (color: string) => void;
   hoveredColor: { x: number; y: number; info: string } | null;
-  removeMode: boolean;
-  setRemoveMode: (val: boolean) => void;
 }
 
-const Sidebar = ({
-  AIDA_COLORS,
-  aidaColor,
-  handleAidaChange,
+const FlossPicker = ({
   FLOSS_BRANDS,
   brand,
   setBrand,
@@ -37,24 +29,15 @@ const Sidebar = ({
   setSelectedColor,
   hoveredColor,
   setHoveredColor,
-  removeMode,
-  setRemoveMode,
-}: SidebarProps) => {
+}: FlossPickerProps) => {
   return (
-    <div
-      className="sidebar"
-      style={{ marginRight: '2rem', minWidth: '200px', position: 'relative' }}>
-      <h2>Select Aida Color</h2>
-      <select value={aidaColor} onChange={handleAidaChange}>
-        {AIDA_COLORS.map((color) => (
-          <option key={color.hex} value={color.hex}>
-            {color.name}
-          </option>
-        ))}
-      </select>
-
+    <>
       <h2>Select Brand</h2>
-      <select value={brand} onChange={(e) => setBrand(e.target.value as Brand)}>
+      <select
+        id="select_floss-brand"
+        name="Floss Brand"
+        value={brand}
+        onChange={(e) => setBrand(e.target.value as Brand)}>
         {(Object.keys(FLOSS_BRANDS) as Brand[]).map((b) => (
           <option key={b} value={b}>
             {b}
@@ -63,10 +46,6 @@ const Sidebar = ({
       </select>
 
       <h3>Colors</h3>
-
-      <button onClick={() => setRemoveMode(!removeMode)}>
-        {removeMode ? 'Switch to Draw Mode' : 'Switch to Remove Mode'}
-      </button>
 
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
         {FLOSS_BRANDS[brand].map((color) => (
@@ -77,7 +56,7 @@ const Sidebar = ({
               setHoveredColor({
                 x: rect.right + 10,
                 y: rect.top,
-                info: `${color.name} (${color.code}) - ${color.hex}`,
+                info: `${color.name} (${color.code})`,
               });
             }}
             onMouseLeave={() => setHoveredColor(null)}
@@ -112,8 +91,8 @@ const Sidebar = ({
           {hoveredColor.info}
         </div>
       )}
-    </div>
+    </>
   );
 };
 
-export default Sidebar;
+export default FlossPicker;
