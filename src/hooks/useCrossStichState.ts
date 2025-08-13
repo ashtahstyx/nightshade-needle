@@ -76,10 +76,8 @@ export default function useCrossStitchState() {
     if (!remove) addToPalette(selectedColor);
   };
 
-  const handleGridSizeChange = (newRows: number, newCols: number) => {
-    setRows(newRows);
-    setCols(newCols);
-    setGrid(createEmptyGrid(newRows, newCols));
+  const handleGridSizeChange = () => {
+    setGrid(createEmptyGrid(rows, cols));
   };
 
   const handleClearGrid = () => {
@@ -93,8 +91,8 @@ export default function useCrossStitchState() {
     );
   };
 
-  const zoomIn = () => setZoom((z) => Math.min(z + 0.1, 3));
-  const zoomOut = () => setZoom((z) => Math.max(z - 0.1, 0.5));
+  const zoomIn = () => setZoom((z: number) => Math.min(z + 0.1, 3));
+  const zoomOut = () => setZoom((z: number) => Math.max(z - 0.1, 0.5));
   const resetZoom = () => setZoom(1);
 
   // -------------------------

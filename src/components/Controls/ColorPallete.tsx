@@ -25,7 +25,7 @@ const ColorPalette = ({
   setHoveredColor,
   flossMap,
   removeColorFromPalette,
-  readOnly = false, // default false
+  readOnly = false,
 }: ColorPaletteBoxProps) => {
   const limitedPalette = palette.slice(0, MAX_COLORS);
   const isMaxReached = palette.length > MAX_COLORS;

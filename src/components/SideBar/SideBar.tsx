@@ -32,8 +32,8 @@ interface SidebarProps {
   setRemoveMode: (val: boolean) => void;
   palette: string[];
   onSelect: (color: string) => void;
-  flossMap: Record<string, string>;
-  removeColorFromPalette: Record<string, string>;
+  flossMap: Record<string, FlossColor>;
+  removeColorFromPalette: (color: string) => void;
 }
 
 const Sidebar = ({ ...props }: SidebarProps) => {
