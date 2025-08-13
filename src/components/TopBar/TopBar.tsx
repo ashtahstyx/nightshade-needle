@@ -18,10 +18,6 @@ interface TopBarProps {
   zoomOut: () => void;
   resetZoom: () => void;
   handleClearGrid: () => void;
-  saveMode: boolean;
-  setSaveMode: (val: boolean) => void;
-  manualSave: () => void;
-  manualLoad: () => void;
 }
 
 const TopBar = ({

@@ -12,8 +12,8 @@ interface ColorPaletteBoxProps {
     info: { x: number; y: number; info: string } | null
   ) => void;
   flossMap: Record<string, FlossColor>;
-  removeColorFromPalette?: (color: string) => void; // optional now
-  readOnly?: boolean; // new optional prop to toggle read-only mode
+  removeColorFromPalette?: (color: string) => void;
+  readOnly?: boolean;
 }
 
 const MAX_COLORS = 30;
@@ -75,7 +75,6 @@ const ColorPalette = ({
             title={info}>
             {Icon && <Icon className="colorIcon" />}
 
-            {/* Remove button hidden if readOnly is true */}
             {!readOnly && removeColorFromPalette && (
               <button
                 onClick={(e) => {
@@ -103,7 +102,6 @@ const ColorPalette = ({
               </button>
             )}
 
-            {/* Show color name under icon only in readOnly mode */}
             {readOnly && (
               <div
                 style={{

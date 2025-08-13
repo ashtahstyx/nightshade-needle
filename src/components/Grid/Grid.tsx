@@ -1,4 +1,3 @@
-// src/components/Grid.tsx
 import React from 'react';
 import { getContrastColor } from '../../helper/contrast-helper';
 import './Grid.scss';
@@ -6,7 +5,7 @@ import './Grid.scss';
 interface GridProps {
   grid: string[][];
   onCellClick: (row: number, col: number, removeMode: boolean) => void;
-  aidaColor: string;
+  aidaColor: string; // background color of entire grid
   removeMode: boolean;
   zoom: number;
   isDrawing: boolean;
@@ -54,7 +53,9 @@ const Grid = ({
           <div className="gridContainer_row" key={rowIndex}>
             {row.map((color, colIndex) => {
               const fill = color || 'transparent';
+
               const borderColor = getContrastColor(color || aidaColor);
+
               return (
                 <div
                   key={colIndex}
