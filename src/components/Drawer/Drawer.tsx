@@ -8,7 +8,7 @@ interface DrawerProps {
 }
 
 const Drawer = ({ title, children }: DrawerProps) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   return (
     <div className={`nightshade-drawer ${isOpen ? 'open' : ''}`}>

@@ -13,8 +13,8 @@ const Nightshade = () => {
   return (
     <div className="nightshade">
       <div className="nightshade_top">
-        <TopBar {...topbarProps} />
         <Header />
+        <TopBar {...topbarProps} />
       </div>
       <div className="nightshade_body">
         <Sidebar {...sidebarProps} />
