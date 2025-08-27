@@ -5,7 +5,7 @@ import './Grid.scss';
 interface GridProps {
   grid: string[][];
   onCellClick: (row: number, col: number, removeMode: boolean) => void;
-  aidaColor: string; // background color of entire grid
+  aidaColor: string;
   removeMode: boolean;
   zoom: number;
   isDrawing: boolean;
@@ -39,18 +39,18 @@ const Grid = ({
   return (
     <div
       id="crossStitchGrid"
-      className="gridContainer"
+      className="grid-container"
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}>
       <div
-        className="gridContainer_grid"
+        className="grid-container_grid"
         style={{
           backgroundColor: aidaColor,
           transform: `scale(${zoom})`,
           transformOrigin: 'top left',
         }}>
         {grid.map((row, rowIndex) => (
-          <div className="gridContainer_row" key={rowIndex}>
+          <div className="grid-container_row" key={rowIndex}>
             {row.map((color, colIndex) => {
               const fill = color || 'transparent';
 
@@ -59,7 +59,7 @@ const Grid = ({
               return (
                 <div
                   key={colIndex}
-                  className="gridContainer_cell"
+                  className="grid-container_cell"
                   data-color={fill}
                   style={
                     {

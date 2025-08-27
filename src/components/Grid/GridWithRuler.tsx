@@ -27,58 +27,36 @@ const GridWithRuler = ({
   const cols = grid[0]?.length || 0;
 
   return (
-    <div className="ruler-wrapper">
-      <div className="ruler-wrapper_Row" style={{ height: cellSize }}>
-        <div style={{ width: cellSize }} />
-        <div className="ruler-wrapper_topRuler" style={{ display: 'flex' }}>
-          {Array.from({ length: cols }).map((_, colIdx) => (
-            <div
-              key={`top-${colIdx}`}
-              style={{
-                width: cellSize,
-                height: cellSize,
-                textAlign: 'left',
-                lineHeight: `${cellSize}px`,
-              }}>
-              <div className="rulerCell">
-                {colIdx % 5 === 0 && (
-                  <>
-                    <div className="tick" />
-                    <span>{colIdx}</span>
-                  </>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
+    <div
+      className="grid-ruler_wrapper"
+      style={{ '--cell-size': `${cellSize}px` } as any}>
+      <div className="corner" />
+
+      <div className="grid-ruler_wrapper-top">
+        {Array.from({ length: cols }).map((_, colIdx) => (
+          <div key={colIdx} className="ruler-cell">
+            {colIdx % 5 === 0 ? colIdx : ''}
+          </div>
+        ))}
       </div>
 
-      <div className="ruler-wrapper_Content">
-        <div className="ruler-wrapper_sideRuler">
-          {Array.from({ length: rows }).map((_, rowIdx) => (
-            <div
-              className="rulerCell"
-              key={`side-${rowIdx}`}
-              style={{
-                width: cellSize,
-                height: cellSize,
-                textAlign: 'right',
-                lineHeight: `${cellSize}px`,
-              }}>
-              {rowIdx % 5 === 0 ? rowIdx : ''}
-            </div>
-          ))}
-        </div>
-        <Grid
-          grid={grid}
-          onCellClick={onCellClick}
-          aidaColor={aidaColor}
-          removeMode={removeMode}
-          zoom={zoom}
-          isDrawing={isDrawing}
-          setIsDrawing={setIsDrawing}
-        />
+      <div className="grid-ruler_wrapper-side">
+        {Array.from({ length: rows }).map((_, rowIdx) => (
+          <div key={rowIdx} className="ruler-cell">
+            {rowIdx % 5 === 0 ? rowIdx : ''}
+          </div>
+        ))}
       </div>
+
+      <Grid
+        grid={grid}
+        onCellClick={onCellClick}
+        aidaColor={aidaColor}
+        removeMode={removeMode}
+        zoom={zoom}
+        isDrawing={isDrawing}
+        setIsDrawing={setIsDrawing}
+      />
     </div>
   );
 };

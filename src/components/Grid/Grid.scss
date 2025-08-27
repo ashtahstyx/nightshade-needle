@@ -1,8 +1,9 @@
 @use '../../styles/variables' as *;
 
-.gridContainer {
-  overflow: auto;
-
+.grid-container {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  display: inline-block;
   &_grid {
     background-color: var(--aida-color, #fafaf7);
     display: inline-block;
@@ -25,58 +26,62 @@
   }
 }
 
-.zoom-container {
-  display: inline-block;
-  transform-origin: 0 0;
-  will-change: transform;
-}
+.grid-ruler {
+  &_wrapper {
+    display: grid;
+    grid-template-columns: var(--cell-size) 1fr;
+    grid-template-rows: var(--cell-size) 1fr;
+    max-height: 80vh;
+    max-width: 100%;
+    overflow: auto;
 
-.ruler-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  max-height: 80vh;
-  font-size: $font-size-sm;
-  overflow: hidden;
+    .corner {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      border-right: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      z-index: 3;
+      position: sticky;
+      top: 0;
+      left: 0;
+    }
 
-  &_Row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-
-  &_Content {
-    display: flex;
-    flex-direction: row;
-  }
-
-  &_topRuler {
-    .rulerCell {
+    &-top {
+      background-color: $leaf-black;
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
       display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: start;
-      font-size: $font-size-sm;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+
+      .ruler-cell {
+        width: var(--cell-size);
+        height: var(--cell-size);
+        border-bottom: 1px solid #ccc;
+        text-align: center;
+        line-height: var(--cell-size);
+      }
     }
 
-    span {
-      padding-left: 0.25rem;
-    }
+    &-side {
+      background-color: $leaf-black;
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      display: flex;
+      flex-direction: column;
+      position: sticky;
+      left: 0;
+      z-index: 2;
 
-    .tick {
-      width: 1px;
-      height: $font-size-md;
-      background-color: $fog-ash;
-    }
-  }
-
-  &_sideRuler {
-    display: flex;
-    flex-direction: column;
-
-    .rulerCell {
-      font-size: $font-size-sm;
-      padding-right: 0.5rem;
+      .ruler-cell {
+        width: var(--cell-size);
+        height: var(--cell-size);
+        border-right: 1px solid #ccc;
+        line-height: var(--cell-size);
+        text-align: right;
+        padding-right: 0.25rem;
+      }
     }
   }
 }
