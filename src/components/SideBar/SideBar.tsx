@@ -40,12 +40,15 @@ const Sidebar = ({ ...props }: SidebarProps) => {
   return (
     <div className="nightshade-needle_sidebar">
       <div className="grid-controls">
+        <EraseToggle {...props} />
+
+        <ColorPalette {...props} />
+        <Drawer title="Floss Color">
+          <FlossColorPicker {...props} />
+        </Drawer>
         <Drawer title="Aida Color">
           <AidaColor {...props} />
         </Drawer>
-        <EraseToggle {...props} />
-        <ColorPalette {...props} />
-        <FlossColorPicker {...props} />
       </div>
     </div>
   );

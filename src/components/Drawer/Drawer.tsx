@@ -23,7 +23,7 @@ const Drawer = ({ title, children }: DrawerProps) => {
         style={{
           maxHeight: isOpen ? '500px' : '0px',
           display: isOpen ? 'block' : 'none',
-          overflow: 'hidden',
+          overflow: 'scroll',
           transition: 'max-height 0.6s ease, opacity 0.6s ease',
         }}>
         {children}

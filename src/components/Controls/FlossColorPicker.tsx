@@ -1,4 +1,5 @@
 import type { Dispatch, SetStateAction } from 'react';
+import { useState } from 'react';
 import '../SideBar/SideBar.scss';
 
 type Brand = 'DMC' | 'Anchor' | 'Sullivans' | 'JPCoats' | 'MaxiMouline';
@@ -13,12 +14,8 @@ interface FlossPickerProps {
   FLOSS_BRANDS: Record<Brand, FlossColor[]>;
   brand: Brand;
   setBrand: Dispatch<SetStateAction<Brand>>;
-  setHoveredColor: Dispatch<
-    SetStateAction<{ x: number; y: number; info: string } | null>
-  >;
   selectedColor: string;
   setSelectedColor: (color: string) => void;
-  hoveredColor: { x: number; y: number; info: string } | null;
 }
 
 const FlossPicker = ({
@@ -27,12 +24,13 @@ const FlossPicker = ({
   setBrand,
   selectedColor,
   setSelectedColor,
-  hoveredColor,
-  setHoveredColor,
 }: FlossPickerProps) => {
+  const [view, setView] = useState<'swatch' | 'list'>('swatch');
+
+  const colors = FLOSS_BRANDS[brand];
+
   return (
-    <>
-      <h2>Select Brand</h2>
+    <div className="floss-picker">
       <select
         id="select_floss-brand"
         name="Floss Brand"
@@ -45,53 +43,77 @@ const FlossPicker = ({
         ))}
       </select>
 
-      <h3>Colors</h3>
-
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
-        {FLOSS_BRANDS[brand].map((color) => (
-          <div
-            key={color.code}
-            onMouseEnter={(e) => {
-              const rect = (e.target as HTMLElement).getBoundingClientRect();
-              setHoveredColor({
-                x: rect.right + 10,
-                y: rect.top,
-                info: `${color.name} (${color.code})`,
-              });
-            }}
-            onMouseLeave={() => setHoveredColor(null)}
-            style={{
-              backgroundColor: color.hex,
-              width: 30,
-              height: 30,
-              border:
-                selectedColor === color.hex
-                  ? '2px solid black'
-                  : '1px solid #ccc',
-              cursor: 'pointer',
-            }}
-            onClick={() => setSelectedColor(color.hex)}
-          />
-        ))}
+      {/* View toggle */}
+      <div style={{ margin: '8px 0' }}>
+        <button
+          onClick={() => setView('swatch')}
+          style={{ fontWeight: view === 'swatch' ? 'bold' : 'normal' }}>
+          Swatch View
+        </button>
+        <button
+          onClick={() => setView('list')}
+          style={{
+            fontWeight: view === 'list' ? 'bold' : 'normal',
+            marginLeft: 8,
+          }}>
+          List View
+        </button>
       </div>
 
-      {hoveredColor && (
-        <div
-          style={{
-            position: 'fixed',
-            top: hoveredColor.y,
-            left: hoveredColor.x,
-            backgroundColor: '#f0f0f0',
-            padding: '4px 8px',
-            border: '1px solid #ccc',
-            fontSize: '0.85rem',
-            borderRadius: '4px',
-            zIndex: 1000,
-          }}>
-          {hoveredColor.info}
-        </div>
-      )}
-    </>
+      <div>
+        {view === 'swatch' ? (
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
+            {colors.map((color) => (
+              <div
+                key={color.code}
+                style={{
+                  backgroundColor: color.hex,
+                  width: 30,
+                  height: 30,
+                  border:
+                    selectedColor === color.hex
+                      ? '2px solid black'
+                      : '1px solid #ccc',
+                  cursor: 'pointer',
+                }}
+                onClick={() => setSelectedColor(color.hex)}
+              />
+            ))}
+          </div>
+        ) : (
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+            {colors.map((color) => (
+              <li
+                key={color.code}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginBottom: 4,
+                  cursor: 'pointer',
+                  border:
+                    selectedColor === color.hex
+                      ? '2px solid black'
+                      : '1px solid #ccc',
+                  padding: '2px 4px',
+                }}
+                onClick={() => setSelectedColor(color.hex)}>
+                <div
+                  style={{
+                    width: 20,
+                    height: 20,
+                    backgroundColor: color.hex,
+                    marginRight: 8,
+                  }}
+                />
+                <span>
+                  {color.name} ({color.code})
+                </span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </div>
   );
 };
 
