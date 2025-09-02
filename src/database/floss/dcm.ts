@@ -1753,6 +1753,14 @@ export const DMC = [
     family: '9',
   },
   {
+    code: '955',
+    name: 'Nile Green Light',
+    hex: '#A2D6AD',
+    category: 'green-yellow',
+    range: '900',
+    family: '10',
+  },
+  {
     code: '310',
     name: 'Black',
     hex: '#000000',

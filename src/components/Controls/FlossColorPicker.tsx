@@ -43,26 +43,22 @@ const FlossPicker = ({
         ))}
       </select>
 
-      {/* View toggle */}
-      <div style={{ margin: '8px 0' }}>
+      <div className="floss-picker_view">
         <button
-          onClick={() => setView('swatch')}
-          style={{ fontWeight: view === 'swatch' ? 'bold' : 'normal' }}>
-          Swatch View
-        </button>
-        <button
-          onClick={() => setView('list')}
+          onClick={() => setView(view === 'swatch' ? 'list' : 'swatch')}
           style={{
-            fontWeight: view === 'list' ? 'bold' : 'normal',
-            marginLeft: 8,
+            padding: '4px 12px',
+            cursor: 'pointer',
+            backgroundColor: '#f5f5f5',
+            fontWeight: 'bold',
           }}>
-          List View
+          {view === 'swatch' ? 'List View' : 'Swatch View'}
         </button>
       </div>
 
       <div>
         {view === 'swatch' ? (
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
+          <div className="floss-picker_swatch">
             {colors.map((color) => (
               <div
                 key={color.code}
@@ -81,7 +77,7 @@ const FlossPicker = ({
             ))}
           </div>
         ) : (
-          <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+          <ul className="floss-picker_list">
             {colors.map((color) => (
               <li
                 key={color.code}
@@ -92,8 +88,8 @@ const FlossPicker = ({
                   cursor: 'pointer',
                   border:
                     selectedColor === color.hex
-                      ? '2px solid black'
-                      : '1px solid #ccc',
+                      ? '2px solid #ccc'
+                      : '0px transparent',
                   padding: '2px 4px',
                 }}
                 onClick={() => setSelectedColor(color.hex)}>
