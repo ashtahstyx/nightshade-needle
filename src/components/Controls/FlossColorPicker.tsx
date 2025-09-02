@@ -33,6 +33,7 @@ const FlossPicker = ({
     <div className="floss-picker">
       <select
         id="select_floss-brand"
+        className="floss-picker_brand"
         name="Floss Brand"
         value={brand}
         onChange={(e) => setBrand(e.target.value as Brand)}>
@@ -45,13 +46,8 @@ const FlossPicker = ({
 
       <div className="floss-picker_view">
         <button
-          onClick={() => setView(view === 'swatch' ? 'list' : 'swatch')}
-          style={{
-            padding: '4px 12px',
-            cursor: 'pointer',
-            backgroundColor: '#f5f5f5',
-            fontWeight: 'bold',
-          }}>
+          className="floss-picker_view-button"
+          onClick={() => setView(view === 'swatch' ? 'list' : 'swatch')}>
           {view === 'swatch' ? 'List View' : 'Swatch View'}
         </button>
       </div>

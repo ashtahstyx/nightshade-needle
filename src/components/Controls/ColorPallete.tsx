@@ -65,36 +65,17 @@ const ColorPalette = ({
               backgroundColor: hex,
               border:
                 selectedColor === hex ? '2px solid black' : '1px solid #ccc',
-              position: 'relative',
               cursor: readOnly ? 'default' : 'pointer',
-              padding: '8px 4px',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
             }}
             title={info}>
             {Icon && <Icon className="colorIcon" />}
 
             {!readOnly && removeColorFromPalette && (
               <button
+                className="color-palette_block-remove"
                 onClick={(e) => {
                   e.stopPropagation();
                   removeColorFromPalette(hex);
-                }}
-                style={{
-                  position: 'absolute',
-                  top: -6,
-                  right: -6,
-                  background: 'white',
-                  borderRadius: '50%',
-                  border: 'none',
-                  cursor: 'pointer',
-                  padding: 0,
-                  width: 16,
-                  height: 16,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
                 }}
                 aria-label={`Remove color ${info}`}
                 title={`Remove ${info}`}>
@@ -119,7 +100,7 @@ const ColorPalette = ({
       })}
 
       {isMaxReached && (
-        <p style={{ marginTop: '8px', fontSize: '0.85rem', color: '#666' }}>
+        <p className="color-palette_block-max">
           Maximum of {MAX_COLORS} colors shown. Additional colors won’t appear
           here.
         </p>

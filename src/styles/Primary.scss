@@ -3,10 +3,10 @@
 :root {
   font-family: $font-family-base;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: $font-weight-regular;
 
   color: $moon-petal;
-  background-color: $leaf-black;
+  background-color: $midnight-bloom;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -20,17 +20,16 @@ body,
   padding: 0;
   box-sizing: border-box;
 
-  :focus-visible,
-  :focus {
-    outline: 2px solid $belladonna;
-    outline-offset: 2px;
-    border-radius: 5px;
+  :focus-visible {
+    border-radius: $radius-xl;
+    outline: 1px solid $poison-ivy;
+    outline-offset: 5px;
   }
 }
 
 body {
   margin: 0;
-  padding: 1rem 2rem;
+  padding: 0 2rem 1rem;
   display: flex;
   place-items: center;
   min-width: 320px;
@@ -46,7 +45,7 @@ h4 {
 }
 
 a {
-  font-weight: 500;
+  font-weight: $font-weight-regular;
   color: $belladonna;
   text-decoration: none;
 
@@ -55,15 +54,16 @@ a {
   }
 }
 
-button {
-  border-radius: $radius-md;
+* > button {
+  border-radius: $radius-xl;
   border: 1px solid transparent;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: $font-weight-regular;
   cursor: pointer;
 
-  &:focus,
   &:focus-visible {
-    outline: 2px solid $belladonna;
+    border-radius: $radius-xl;
+    outline: 1px solid $poison-ivy;
+    outline-offset: 5px;
   }
 }

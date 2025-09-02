@@ -5,7 +5,9 @@ interface ClearGridProps {
 const ClearGrid = ({ handleClearGrid }: ClearGridProps) => {
   return (
     <>
-      <button onClick={handleClearGrid}>Clear Grid</button>
+      <div className="grid-controls_clear">
+        <button onClick={handleClearGrid}>Clear Grid</button>
+      </div>
     </>
   );
 };

@@ -10,7 +10,13 @@ const SavePDFButton = ({ gridId, paletteId }: SavePDFButtonProps) => {
     saveAsPDF(gridId, paletteId);
   };
 
-  return <button onClick={handleSavePDF}>Save Design as PDF</button>;
+  return (
+    <>
+      <div className="grid-controls_save">
+        <button onClick={handleSavePDF}>Save Design as PDF</button>
+      </div>
+    </>
+  );
 };
 
 export default SavePDFButton;
