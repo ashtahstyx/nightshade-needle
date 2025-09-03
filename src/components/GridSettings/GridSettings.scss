@@ -6,16 +6,39 @@
   gap: 2rem;
   padding: 1rem 0;
 
-  * > button {
+  * > button:not(.nightshade-drawer_button) {
     background-color: $belladonna;
     color: $moon-petal;
     padding: 0.25rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      margin-right: 0.5rem;
+    }
+  }
+
+  .grid-controls {
+    &_save {
+    }
+  }
+
+  .grid-controls_size {
+    display: flex;
+    flex-direction: column;
   }
 
   .grid-controls_zoom {
     display: flex;
-    align-items: flex-start;
-    gap: 1rem;
+    flex-direction: column;
+
+    &-options {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
     &-inout {
       padding: 0.25rem 0.5rem;
     }

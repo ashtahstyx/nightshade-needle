@@ -25,13 +25,15 @@ interface GridSettingsProps {
 const GridSettings = ({ ...props }: GridSettingsProps) => {
   return (
     <div className="nightshade_grid-settings">
-      <Drawer title="Aida Color">
-        <AidaColor {...props} />
-      </Drawer>
-      <GridSizeControl {...props} />
-      <ZoomControl {...props} />
-      <ClearGrid {...props} />
       <SaveButton gridId="crossStitchGrid" paletteId="crossStitchPalette" />
+      <ClearGrid {...props} />
+      <Drawer title="Aida Options">
+        <h4>Aida Colors</h4>
+        <AidaColor {...props} />
+        <h4>Aida Sizing</h4>
+        <GridSizeControl {...props} />
+        <ZoomControl {...props} />
+      </Drawer>
     </div>
   );
 };

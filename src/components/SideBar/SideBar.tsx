@@ -1,12 +1,16 @@
+// SideBar.tsx
 import { useState } from 'react';
-import useCrossStitchState from '../../hooks/useCrossStichState';
 import GridSettings from '../GridSettings/GridSettings';
 import DrawSettings from '../DrawSettings/DrawSettings';
 import { FaChevronRight, FaChevronLeft } from 'react-icons/fa6';
 import './SideBar.scss';
 
-const SideBar = () => {
-  const { drawSettingsProps, gridSettingsProps } = useCrossStitchState();
+interface SideBarProps {
+  gridSettingsProps: any;
+  drawSettingsProps: any;
+}
+
+const SideBar = ({ gridSettingsProps, drawSettingsProps }: SideBarProps) => {
   const [isOpen, setIsOpen] = useState(true);
 
   return (

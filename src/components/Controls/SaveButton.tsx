@@ -1,4 +1,5 @@
 import saveAsPDF from '../../utils/saveAsPDF';
+import { FaSave } from 'react-icons/fa';
 
 interface SavePDFButtonProps {
   gridId: string;
@@ -13,7 +14,9 @@ const SavePDFButton = ({ gridId, paletteId }: SavePDFButtonProps) => {
   return (
     <>
       <div className="grid-controls_save">
-        <button onClick={handleSavePDF}>Save Design as PDF</button>
+        <button onClick={handleSavePDF}>
+          <FaSave /> Save PDF
+        </button>
       </div>
     </>
   );
