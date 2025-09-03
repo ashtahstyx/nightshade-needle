@@ -1,6 +1,6 @@
 import type { Dispatch, SetStateAction } from 'react';
 import { useState } from 'react';
-import '../SideBar/SideBar.scss';
+import '../DrawSettings/DrawSettings.scss';
 
 type Brand = 'DMC' | 'Anchor' | 'Sullivans' | 'JPCoats' | 'MaxiMouline';
 

@@ -129,7 +129,7 @@ export default function useCrossStitchState() {
   // Return grouped props
   // -------------------------
   return {
-    sidebarProps: {
+    drawSettingsProps: {
       AIDA_COLORS,
       aidaColor,
       handleAidaChange: setAidaColor,
@@ -156,7 +156,7 @@ export default function useCrossStitchState() {
       resetZoom,
       removeColorFromPalette,
     },
-    topbarProps: {
+    gridSettingsProps: {
       AIDA_COLORS,
       aidaColor,
       handleAidaChange: setAidaColor,

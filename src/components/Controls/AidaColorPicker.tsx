@@ -1,4 +1,4 @@
-import '../SideBar/SideBar.scss';
+import '../DrawSettings/DrawSettings.scss';
 
 interface AidaColorProps {
   AIDA_COLORS: { name: string; hex: string }[];

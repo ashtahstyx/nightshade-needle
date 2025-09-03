@@ -1,4 +1,4 @@
-import '../SideBar/SideBar.scss';
+import '../DrawSettings/DrawSettings.scss';
 import { FaEraser, FaPencilAlt } from 'react-icons/fa';
 
 interface EraseProps {
@@ -12,12 +12,12 @@ const Erase = ({ removeMode, setRemoveMode }: EraseProps) => {
       {removeMode ? (
         <>
           <FaPencilAlt />
-          Switch to Draw Mode
+          Draw
         </>
       ) : (
         <>
           <FaEraser />
-          Switch to Erase Mode
+          Erase
         </>
       )}
     </button>

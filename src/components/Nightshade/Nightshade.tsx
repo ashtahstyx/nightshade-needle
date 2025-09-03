@@ -1,23 +1,22 @@
 // src/components/Cross.tsx
 import useCrossStitchState from '../../hooks/useCrossStichState';
 import Header from '../Header/Header';
-import TopBar from '../TopBar/TopBar';
-import Sidebar from '../../components/SideBar/SideBar';
+import GridSettings from '../GridSettings/GridSettings';
+import Sidebar from '../SideBar/SideBar';
 import GridWithRuler from '../../components/Grid/GridWithRuler';
 
 import './Nightshade.scss';
 
 const Nightshade = () => {
-  const { sidebarProps, gridProps, topbarProps } = useCrossStitchState();
+  const { gridProps } = useCrossStitchState();
 
   return (
     <div className="nightshade">
       <div className="nightshade_top">
         <Header />
-        <TopBar {...topbarProps} />
       </div>
       <div className="nightshade_body">
-        <Sidebar {...sidebarProps} />
+        <Sidebar />
         <GridWithRuler {...gridProps} />
       </div>
     </div>

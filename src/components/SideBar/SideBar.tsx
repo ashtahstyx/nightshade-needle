@@ -1,57 +1,35 @@
-import type { Dispatch, SetStateAction } from 'react';
-import AidaColor from '../Controls/AidaColorPicker';
-import EraseToggle from '../Controls/EraseToggle';
-import Drawer from '../Drawer/Drawer';
-import FlossColorPicker from '../Controls/FlossColorPicker';
-import ColorPalette from '../Controls/ColorPallete';
-import { FLOSS_BRANDS } from '../../database/flossColors';
+import { useState } from 'react';
+import useCrossStitchState from '../../hooks/useCrossStichState';
+import GridSettings from '../GridSettings/GridSettings';
+import DrawSettings from '../DrawSettings/DrawSettings';
+import { FaChevronRight, FaChevronLeft } from 'react-icons/fa6';
 import './SideBar.scss';
 
-type Brand = keyof typeof FLOSS_BRANDS;
+const SideBar = () => {
+  const { drawSettingsProps, gridSettingsProps } = useCrossStitchState();
+  const [isOpen, setIsOpen] = useState(true);
 
-interface FlossColor {
-  code: string;
-  name: string;
-  hex: string;
-}
-
-interface SidebarProps {
-  AIDA_COLORS: { name: string; hex: string }[];
-  aidaColor: string;
-  handleAidaChange: (hex: string) => void;
-  FLOSS_BRANDS: Record<Brand, FlossColor[]>;
-  brand: Brand;
-  setBrand: Dispatch<SetStateAction<Brand>>;
-  setHoveredColor: Dispatch<
-    SetStateAction<{ x: number; y: number; info: string } | null>
-  >;
-  selectedColor: string;
-  setSelectedColor: (color: string) => void;
-  hoveredColor: { x: number; y: number; info: string } | null;
-  removeMode: boolean;
-  setRemoveMode: (val: boolean) => void;
-  palette: string[];
-  onSelect: (color: string) => void;
-  flossMap: Record<string, FlossColor>;
-  removeColorFromPalette: (color: string) => void;
-}
-
-const Sidebar = ({ ...props }: SidebarProps) => {
   return (
-    <div className="nightshade-needle_sidebar">
-      <div className="grid-controls">
-        <EraseToggle {...props} />
-
-        <ColorPalette {...props} />
-        <Drawer title="Floss Color">
-          <FlossColorPicker {...props} />
-        </Drawer>
-        <Drawer title="Aida Color">
-          <AidaColor {...props} />
-        </Drawer>
+    <div className={`nightshade-needle_sidebar ${isOpen ? 'open' : ''}`}>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="nightshade-needle_sidebar-button">
+        {isOpen ? <FaChevronLeft size={20} /> : <FaChevronRight size={20} />}
+      </button>
+      <div
+        className="nightshade-needle_sidebar-content"
+        style={{
+          width: isOpen ? '250px' : '0px',
+          maxHeight: '70vh',
+          opacity: isOpen ? 1 : 0,
+          overflow: 'scroll',
+          transition: 'width 0.6s ease, opacity 0.6s ease',
+        }}>
+        <GridSettings {...gridSettingsProps} />
+        <DrawSettings {...drawSettingsProps} />
       </div>
     </div>
   );
 };
 
-export default Sidebar;
+export default SideBar;

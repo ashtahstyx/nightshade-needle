@@ -1,8 +1,8 @@
 @use '../../styles/variables' as *;
 
-.nightshade_topbar {
+.nightshade_grid-settings {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 2rem;
   padding: 1rem 0;
 

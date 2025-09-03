@@ -2,105 +2,18 @@
 
 .nightshade-needle {
   &_sidebar {
-    min-width: 200px;
     height: 80vh;
-    overflow: scroll;
     padding: 1rem;
-  }
-}
-
-.color-palette {
-  &_box {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-    margin: 1rem 0;
-  }
-
-  &_title {
-    width: 100%;
-  }
-
-  &_block {
-    position: relative;
-    width: 50px;
-    height: 30px;
-    padding: 8px 4px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    .colorIcon {
-      font-size: 1rem;
-    }
-
-    &-remove {
-      position: absolute;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      top: -$spacing-xs;
-      right: -$spacing-xs;
-      border-radius: 50%;
-      border: none;
-      cursor: pointer;
-      padding: 0px;
-      width: 1rem;
-      height: 1rem;
-    }
-
-    &-max {
-      margin-top: 0.5rem;
-      font-size: $font-size-sm;
-      color: $fog-ash;
-    }
-  }
-}
-
-.erase-button {
-  padding: 0.25rem;
-  width: 100%;
-  margin: 1rem 0;
-  svg {
-    margin-right: 0.5rem;
-  }
-}
-
-.floss-picker {
-  &_brand {
-    width: 100%;
-    cursor: pointer;
-    padding: 4px;
-    border-radius: $radius-xl;
-  }
-
-  &_view {
-    margin: 8px 0;
-    display: flex;
-    align-items: center;
-    gap: 8px;
 
     &-button {
-      cursor: pointer;
-      padding: 4px 12px;
-      margin: 0.5rem 0;
-      background-color: $belladonna;
+      border: transparent;
+      background-color: $midnight-bloom;
       color: $moon-petal;
       font-weight: $font-weight-bold;
+      width: 100%;
+      padding: 0.25rem 0;
+      margin-bottom: 0.5rem;
+      display: flex;
     }
-  }
-
-  &_swatch {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  &_list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
   }
 }

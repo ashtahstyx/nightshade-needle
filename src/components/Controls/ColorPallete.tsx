@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import type { FlossColor } from '../../types/floss';
 import ICONS from '../../database/colorIcons';
 import { FaTimesCircle } from 'react-icons/fa';
-import '../SideBar/SideBar.scss';
+import '../DrawSettings/DrawSettings.scss';
 
 interface ColorPaletteBoxProps {
   palette: string[];
