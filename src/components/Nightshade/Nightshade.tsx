@@ -1,7 +1,6 @@
 // src/components/Cross.tsx
 import useCrossStitchState from '../../hooks/useCrossStichState';
 import Header from '../Header/Header';
-import GridSettings from '../GridSettings/GridSettings';
 import Sidebar from '../SideBar/SideBar';
 import GridWithRuler from '../../components/Grid/GridWithRuler';
 
