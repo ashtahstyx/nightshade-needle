@@ -7,6 +7,7 @@ interface ZoomProps {
 
 const Zoom = ({ zoom, zoomIn, zoomOut, resetZoom }: ZoomProps) => (
   <div className="grid-controls_zoom">
+    <h4>Grid Zoom</h4>
     <div className="grid-controls_zoom-options">
       <button className="grid-controls_zoom-inout" onClick={zoomOut}>
         −

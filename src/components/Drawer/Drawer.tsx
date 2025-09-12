@@ -15,7 +15,7 @@ const Drawer = ({ title, children }: DrawerProps) => {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="nightshade-drawer_button">
-        <span>{title}</span>
+        <h3>{title}</h3>
         {isOpen ? <FaChevronDown size={20} /> : <FaChevronUp size={20} />}
       </button>
       <div

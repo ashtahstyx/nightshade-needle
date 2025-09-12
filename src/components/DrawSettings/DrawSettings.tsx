@@ -35,9 +35,8 @@ interface DrawSettingsProps {
 const DrawSettings = ({ ...props }: DrawSettingsProps) => {
   return (
     <div className="nightshade_draw-settings">
-      <EraseToggle {...props} />
-
       <ColorPalette {...props} />
+      <EraseToggle {...props} />
       <Drawer title="Floss Color">
         <FlossColorPicker {...props} />
       </Drawer>

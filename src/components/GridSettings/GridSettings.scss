@@ -3,10 +3,10 @@
 .nightshade_grid-settings {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   padding: 1rem 0;
 
-  * > button:not(.nightshade-drawer_button) {
+  * > button:not(.nightshade-drawer_button, .grid-controls_zoom-inout) {
     background-color: $belladonna;
     color: $moon-petal;
     padding: 0.25rem 1rem;
@@ -20,27 +20,47 @@
   }
 
   .grid-controls {
-    &_save {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    > div {
+      h4 {
+        margin-bottom: 0.25rem;
+      }
+
+      &:not(:first-of-type) {
+        border-top: 1px solid $deadroot;
+        padding-top: 1rem;
+      }
     }
-  }
 
-  .grid-controls_size {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .grid-controls_zoom {
-    display: flex;
-    flex-direction: column;
-
-    &-options {
+    &_size {
       display: flex;
-      align-items: flex-start;
-      gap: 1rem;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      input {
+        border-radius: $radius-lg;
+        padding: 0.25rem;
+        margin-left: 0.25rem;
+      }
     }
 
-    &-inout {
-      padding: 0.25rem 0.5rem;
+    &_zoom {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      &-options {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      &-inout {
+        padding: 0.25rem 0.5rem;
+      }
     }
   }
 }

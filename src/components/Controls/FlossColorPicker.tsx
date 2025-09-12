@@ -31,6 +31,7 @@ const FlossPicker = ({
 
   return (
     <div className="floss-picker">
+      <h6>Color swatches may vary depending on print and screen settings</h6>
       <select
         id="select_floss-brand"
         className="floss-picker_brand"

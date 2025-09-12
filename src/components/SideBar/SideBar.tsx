@@ -24,7 +24,7 @@ const SideBar = ({ gridSettingsProps, drawSettingsProps }: SideBarProps) => {
         className="nightshade-needle_sidebar-content"
         style={{
           width: isOpen ? '250px' : '0px',
-          maxHeight: '70vh',
+          maxHeight: '80vh',
           opacity: isOpen ? 1 : 0,
           overflow: 'scroll',
           transition: 'width 0.6s ease, opacity 0.6s ease',

@@ -12,7 +12,8 @@ const AidaColor = ({
   handleAidaChange,
 }: AidaColorProps) => {
   return (
-    <>
+    <div className="grid-controls_color">
+      <h4>Aida Colors</h4>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
         {AIDA_COLORS.map((color) => (
           <div
@@ -30,7 +31,7 @@ const AidaColor = ({
           />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
