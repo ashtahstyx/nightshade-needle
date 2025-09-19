@@ -3,7 +3,7 @@ export const Anchor = [
   {
     code: '292',
     name: 'Jonquil Very Light',
-    hex: '#FFE9AD',
+    hex: '#fffddc',
     category: 'yellow',
     range: '200',
     family: '1',
@@ -11,7 +11,7 @@ export const Anchor = [
   {
     code: '293',
     name: 'Jonquil Light',
-    hex: '#FFF1AF',
+    hex: '#fefa95',
     category: 'yellow',
     range: '200',
     family: '1',
@@ -19,7 +19,7 @@ export const Anchor = [
   {
     code: '295',
     name: 'Jonquil Medium Light',
-    hex: '#FDD755',
+    hex: '#fde87c',
     category: 'yellow',
     range: '200',
     family: '1',
@@ -27,7 +27,7 @@ export const Anchor = [
   {
     code: '305',
     name: 'Topaz Light',
-    hex: '#FFC840',
+    hex: '#fde67f',
     category: 'yellow',
     range: '200',
     family: '1',
@@ -35,7 +35,7 @@ export const Anchor = [
   {
     code: '297',
     name: 'Jonquil Medium',
-    hex: '#FFD600',
+    hex: '#ffda3e',
     category: 'yellow',
     range: '200',
     family: '1',
@@ -43,7 +43,7 @@ export const Anchor = [
   {
     code: '298',
     name: 'Jonquil Dark',
-    hex: '#FFB515',
+    hex: '#febf36',
     category: 'yellow',
     range: '200',
     family: '1',
@@ -51,7 +51,7 @@ export const Anchor = [
   {
     code: '288',
     name: 'Canary Yellow Light',
-    hex: '#FFF1AF',
+    hex: '#FCFC8E',
     category: 'yellow',
     range: '200',
     family: '1',
@@ -59,7 +59,7 @@ export const Anchor = [
   {
     code: '289',
     name: 'Canary Yellow Medium Light',
-    hex: 'f4d739',
+    hex: '##FFFD6E',
     category: 'yellow',
     range: '200',
     family: '1',
@@ -67,7 +67,7 @@ export const Anchor = [
   {
     code: '290',
     name: 'Canary Yellow Medium',
-    hex: '#FDED54',
+    hex: '#FFF143',
     category: 'yellow',
     range: '200',
     family: '1',
@@ -75,7 +75,7 @@ export const Anchor = [
   {
     code: '291',
     name: 'Canary Yellow Dark',
-    hex: '#f5c001',
+    hex: '#FEE40B',
     category: 'yellow',
     range: '200',
     family: '1',
@@ -83,7 +83,7 @@ export const Anchor = [
   {
     code: '275',
     name: 'Citrus Light',
-    hex: '#FFFBEF',
+    hex: '#EDE3D1',
     category: 'yellow',
     range: '200',
     family: '1',
@@ -91,7 +91,7 @@ export const Anchor = [
   {
     code: '386',
     name: 'Citrus Very Light',
-    hex: '#F8E4C8',
+    hex: '#FDFED5',
     category: 'yellow',
     range: '300',
     family: '1',
@@ -99,7 +99,7 @@ export const Anchor = [
   {
     code: '300',
     name: 'Citrus Very Light',
-    hex: '#FFE9AD',
+    hex: '#F7F7BC',
     category: 'yellow',
     range: '300',
     family: '1',
@@ -107,7 +107,7 @@ export const Anchor = [
   {
     code: '301',
     name: 'Citrus',
-    hex: '#FFE793',
+    hex: '#FEEDA5',
     category: 'yellow',
     range: '300',
     family: '1',
@@ -115,7 +115,7 @@ export const Anchor = [
   {
     code: '302',
     name: 'Citrus Medium Light',
-    hex: '#FFBF57',
+    hex: '#FFCA73',
     category: 'yellow',
     range: '300',
     family: '1',
@@ -123,7 +123,7 @@ export const Anchor = [
   {
     code: '303',
     name: 'Citrus Medium',
-    hex: '#FFA32B',
+    hex: '#FFA54D',
     category: 'orange',
     range: '300',
     family: '1',
@@ -131,7 +131,7 @@ export const Anchor = [
   {
     code: '304',
     name: 'Citrus Medium',
-    hex: '#f68703',
+    hex: '#FD7530',
     category: 'orange',
     range: '300',
     family: '1',
@@ -139,7 +139,7 @@ export const Anchor = [
   {
     code: '313',
     name: 'Tangerine Light',
-    hex: '#f4a81e',
+    hex: '#FFB978',
     category: 'orange',
     range: '300',
     family: '1',
@@ -147,7 +147,7 @@ export const Anchor = [
   {
     code: '314',
     name: 'Tangerine Medium Light',
-    hex: '#f58402',
+    hex: '#FA7D39',
     category: 'orange',
     range: '300',
     family: '1',
@@ -155,7 +155,7 @@ export const Anchor = [
   {
     code: '316',
     name: 'Tangerine Dark',
-    hex: '#f87803',
+    hex: '#FF5B24',
     category: 'orange',
     range: '300',
     family: '1',
@@ -163,7 +163,7 @@ export const Anchor = [
   {
     code: '925',
     name: 'Tangerine Very Dark',
-    hex: '#f25c01',
+    hex: '#FF4F25',
     category: 'orange',
     range: '900',
     family: '1',
