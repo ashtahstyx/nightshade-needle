@@ -59,7 +59,7 @@ export const Anchor = [
   {
     code: '289',
     name: 'Canary Yellow Medium Light',
-    hex: '##FFFD6E',
+    hex: '#FFFD6E',
     category: 'yellow',
     range: '200',
     family: '1',
